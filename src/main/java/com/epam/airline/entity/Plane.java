@@ -60,4 +60,5 @@ public class Plane {
     public int getFuelConsumption() {
         return fuelConsumption;
     }
+
 }

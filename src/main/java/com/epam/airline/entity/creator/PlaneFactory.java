@@ -11,7 +11,7 @@ import com.epam.airline.entity.PlaneEnum;
 public class PlaneFactory {
 
     public static Plane buildPlane(PlaneEnum planeEnum) {
-        Plane plane = null;
+        Plane plane;
         if(planeEnum.getType().equals("airliner")){
             plane = new Airliner(planeEnum.getName(), planeEnum.getOthers().get(0),
                     planeEnum.getOthers().get(1), planeEnum.getOthers().get(2));

@@ -40,7 +40,7 @@ public class Airliner extends Plane {
         return result;
     }
 
-    public int getCapacity() {
+    public int getSeats() {
         return seats;
     }
 }
