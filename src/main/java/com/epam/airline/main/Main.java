@@ -1,25 +1,20 @@
 package com.epam.airline.main;
 
 import com.epam.airline.entity.AirlineCompany;
-import com.epam.airline.entity.Airliner;
-import com.epam.airline.entity.Freighter;
-import com.epam.airline.entity.Plane;
-
-import java.util.ArrayList;
+import com.epam.airline.entity.PlaneEnum;
+import com.epam.airline.entity.creator.PlaneFactory;
 
 /**
  * Created by Kanstantsin_Makarau on 8/19/2014.
  */
 public class Main {
-    AirlineCompany airlineCompany = AirlineCompany.getInstance();
-    public static void main(String[] args){
-        ArrayList<Plane> integerArrayList = new ArrayList<Plane>();
-        Plane a = new Freighter("bu", -5, 7, 6);
 
-        integerArrayList.add(a);
-        integerArrayList.add(new Airliner("", 50, 0, 5));
-        for(Plane elem : integerArrayList){
-            System.out.println(elem);
-        }
+    public static void main(String[] args) {
+        AirlineCompany company = AirlineCompany.getInstance();
+        company.addPlane(PlaneFactory.buildPlane(PlaneEnum.AN_124));
+        company.addPlane(PlaneFactory.buildPlane(PlaneEnum.AN_225));
+        company.addPlane(PlaneFactory.buildPlane(PlaneEnum.BOEING_747_400));
+        company.addPlane(PlaneFactory.buildPlane(PlaneEnum.BOEING_737));
+        company.addPlane(PlaneFactory.buildPlane(PlaneEnum.AIRBUS_А380));
     }
 }

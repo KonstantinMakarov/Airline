@@ -9,23 +9,9 @@ public class Plane {
     private int fuelConsumption;
 
     public Plane(String name, int range, int fuelConsumption){
-        try{
-            if(name.equals("")){
-                throw new IllegalArgumentException("---Illegal name");
-            }
-            if(range <= 0){
-                throw new IllegalArgumentException("---Illegal range");
-            }
-            if(fuelConsumption <= 0){
-                throw new IllegalArgumentException("---Illegal fuel consumption");
-            }
-            this.name = name;
-            this.range = range;
-            this.fuelConsumption = fuelConsumption;
-        }
-        catch(IllegalArgumentException e){
-            System.out.println(new StringBuilder().append(this.getClass()).append(" ").append(e.getMessage()));
-        }
+        this.name = name;
+        this.range = range;
+        this.fuelConsumption = fuelConsumption;
     }
 
     @Override

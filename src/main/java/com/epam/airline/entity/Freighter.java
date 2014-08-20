@@ -8,15 +8,7 @@ public class Freighter extends Plane {
 
     public Freighter(String name, int range, int fuelConsumption, int capacity) {
         super(name, range, fuelConsumption);
-        try{
-            if(capacity <= 0){
-                throw new IllegalArgumentException("Illegal capacity");
-            }
-            this.capacity = capacity;
-        }
-        catch (IllegalArgumentException e){
-            System.out.println(new StringBuilder().append(this.getClass()).append(" ").append(e.getMessage()));
-        }
+        this.capacity = capacity;
     }
 
     @Override

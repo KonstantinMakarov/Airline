@@ -1,13 +1,15 @@
 package com.epam.airline.entity;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
  * Created by Kanstantsin_Makarau on 8/19/2014.
  */
 public class AirlineCompany {
-    List<Plane> planes;
-    static AirlineCompany instance;
+    private List<Plane> planes = new ArrayList<Plane>();
+    private static AirlineCompany instance = null;
 
     private AirlineCompany(){
 
@@ -21,10 +23,10 @@ public class AirlineCompany {
     }
 
     public List<Plane> getPlanes() {
-        return planes;
+        return Collections.unmodifiableList(planes);
     }
 
-    public void setPlanes(List<Plane> planes) {
-        this.planes = planes;
+    public void addPlane(Plane plane) {
+        this.planes.add(plane);
     }
 }

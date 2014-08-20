@@ -8,15 +8,7 @@ public class Airliner extends Plane {
 
     public Airliner(String name, int range, int fuelConsumption, int seats) {
         super(name, range, fuelConsumption);
-        try{
-            if(seats <= 0){
-                throw new IllegalArgumentException("Illegal seats");
-            }
-            this.seats = seats;
-        }
-        catch (IllegalArgumentException e){
-            System.out.println(new StringBuilder().append(this.getClass()).append(" ").append(e.getMessage()));
-        }
+        this.seats = seats;
     }
 
     @Override
