@@ -9,30 +9,44 @@ public class Plane {
     private int fuelConsumption;
 
     public Plane(String name, int range, int fuelConsumption){
-        this.name = name;
-        this.range = range;
-        this.fuelConsumption = fuelConsumption;
+        try{
+            if(name.equals("")){
+                throw new IllegalArgumentException("---Illegal name");
+            }
+            if(range <= 0){
+                throw new IllegalArgumentException("---Illegal range");
+            }
+            if(fuelConsumption <= 0){
+                throw new IllegalArgumentException("---Illegal fuel consumption");
+            }
+            this.name = name;
+            this.range = range;
+            this.fuelConsumption = fuelConsumption;
+        }
+        catch(IllegalArgumentException e){
+            System.out.println(new StringBuilder().append(this.getClass()).append(" ").append(e.getMessage()));
+        }
     }
 
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
 
-        builder.append("Name ").append(this.name);
-        builder.append(" Fuel Consumption ").append(this.fuelConsumption);
-        builder.append(" Range ").append(this.range);
+        builder.append("Name: ").append(name);
+        builder.append("; Range: ").append(range);
+        builder.append("; Fuel Consumption: ").append(fuelConsumption);
 
         return builder.toString();
     }
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj)
+        if (this == obj){
             return true;
-        if (obj == null)
+        }
+        if (null == obj || getClass() != obj.getClass()){
             return false;
-        if (getClass() != obj.getClass())
-            return false;
+        }
         Plane plane = (Plane) obj;
         return (this.name == plane.getName() &&
                 this.range == plane.getRange() &&
@@ -42,12 +56,11 @@ public class Plane {
 
     @Override
     public int hashCode() {
-        int code = 11;
-        int k = 7;
-        code = k * (code + this.name.hashCode());
-        code = k * (code + this.range);
-        code = k * (code + this.fuelConsumption);
-        return code;
+        int result = super.hashCode();
+        result = 7 * result + name.hashCode();
+        result = 7 * result + range;
+        result = 7 * result + fuelConsumption;
+        return result;
     }
 
     public String getName() {
