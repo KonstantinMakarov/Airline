@@ -8,6 +8,6 @@ import com.epam.airline.entity.AirlineCompany;
 public class Main {
     AirlineCompany airlineCompany = AirlineCompany.getInstance();
     public static void main(String[] args){
-        System.out.println("Hello");
+
     }
 }
