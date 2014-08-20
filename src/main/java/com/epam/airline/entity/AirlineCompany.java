@@ -29,4 +29,30 @@ public class AirlineCompany {
     public void addPlane(Plane plane) {
         this.planes.add(plane);
     }
+
+    @Override
+    public String toString() {
+        return "AirlineCompany{" +
+                "planes=" + planes +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (!(obj instanceof AirlineCompany)) return false;
+
+        AirlineCompany company = (AirlineCompany) obj;
+
+        if (!planes.equals(company.planes)) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = super.hashCode();
+        result = 7 * result + planes.hashCode();
+        return result;
+    }
 }

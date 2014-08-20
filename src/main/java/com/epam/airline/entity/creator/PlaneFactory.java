@@ -13,14 +13,14 @@ public class PlaneFactory {
     public static Plane buildPlane(PlaneEnum planeEnum) {
         Plane plane = null;
         if(planeEnum.getType().equals("airliner")){
-            plane = new Airliner(planeEnum.getName(), planeEnum.getOthers().get(2),
-                    planeEnum.getOthers().get(3), planeEnum.getOthers().get(4));
+            plane = new Airliner(planeEnum.getName(), planeEnum.getOthers().get(0),
+                    planeEnum.getOthers().get(1), planeEnum.getOthers().get(2));
         }
         else if(planeEnum.getType().equals("freighter")){
-            plane = new Freighter(planeEnum.getName(), planeEnum.getOthers().get(2),
-                    planeEnum.getOthers().get(3), planeEnum.getOthers().get(4));
+            plane = new Freighter(planeEnum.getName(), planeEnum.getOthers().get(0),
+                    planeEnum.getOthers().get(1), planeEnum.getOthers().get(2));
         }
-        else throw new IllegalArgumentException();
+        else throw new IllegalArgumentException("Illegal plane type");
 
         return plane;
     }

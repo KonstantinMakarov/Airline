@@ -1,6 +1,7 @@
 package com.epam.airline.main;
 
 import com.epam.airline.entity.AirlineCompany;
+import com.epam.airline.entity.Plane;
 import com.epam.airline.entity.PlaneEnum;
 import com.epam.airline.entity.creator.PlaneFactory;
 
@@ -16,5 +17,9 @@ public class Main {
         company.addPlane(PlaneFactory.buildPlane(PlaneEnum.BOEING_747_400));
         company.addPlane(PlaneFactory.buildPlane(PlaneEnum.BOEING_737));
         company.addPlane(PlaneFactory.buildPlane(PlaneEnum.AIRBUS_А380));
+
+        for(Plane plane : company.getPlanes()){
+            System.out.println(plane);
+        }
     }
 }
