@@ -12,12 +12,12 @@ import com.epam.airline.logic.PlaneOperation;
 public class Main {
 
     public static void main(String[] args) {
-        //todo verification here or in factory
+        //todo verification here or in factory or in all methods
         AirlineCompany company = AirlineCompany.getInstance();
         company.addPlane(PlaneFactory.buildPlane(PlaneEnum.AN_124));
         company.addPlane(PlaneFactory.buildPlane(PlaneEnum.AN_225));
         company.addPlane(PlaneFactory.buildPlane(PlaneEnum.BOEING_747_400));
-        company.addPlane(null);
+        //company.addPlane(null);
         company.addPlane(PlaneFactory.buildPlane(PlaneEnum.BOEING_737));
         company.addPlane(PlaneFactory.buildPlane(PlaneEnum.AIRBUS_А380));
 
@@ -27,6 +27,7 @@ public class Main {
 
         System.out.println(PlaneOperation.totalCapacity(company.getPlanes()));
         System.out.println(PlaneOperation.totalSeating(company.getPlanes()));
+        System.out.println(PlaneOperation.sortByRange(company.getPlanes()));
         System.out.println(PlaneOperation.findPlanesByFuel(company.getPlanes(), 15, 20));
 
     }

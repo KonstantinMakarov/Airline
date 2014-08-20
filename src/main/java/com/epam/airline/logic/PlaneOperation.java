@@ -4,9 +4,7 @@ import com.epam.airline.entity.Airliner;
 import com.epam.airline.entity.Freighter;
 import com.epam.airline.entity.Plane;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Use for ...
@@ -24,9 +22,15 @@ public  class PlaneOperation {
         return rightPlanes;
     }
 
-    public static void sortByRange(LinkedList<Plane> planes) {
-        PlaneSorter comparator = new PlaneSorter();
-        comparator.sortByRange(planes);
+
+    public static Set<Plane> sortByRange(List<Plane> planes) {
+
+        Set<Plane> planeSet = new TreeSet<Plane>(new PlaneRangeComparator());
+
+        for (Plane plane : planes) {
+            planeSet.add(plane);
+        }
+        return planeSet;
     }
 
     public static int totalSeating(List<Plane> planes) {

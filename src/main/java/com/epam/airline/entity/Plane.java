@@ -18,7 +18,7 @@ public class Plane {
     public String toString() {
         StringBuilder builder = new StringBuilder();
 
-        builder.append("Name: ").append(name);
+        builder.append("---Name: ").append(name);
         builder.append("; Range: ").append(range);
         builder.append("; Fuel Consumption: ").append(fuelConsumption);
 
