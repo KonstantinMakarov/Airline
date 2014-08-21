@@ -21,14 +21,17 @@ public class Main {
         company.addPlane(PlaneFactory.buildPlane(PlaneEnum.BOEING_737));
         company.addPlane(PlaneFactory.buildPlane(PlaneEnum.AIRBUS_А380));
 
+        System.out.println("\nPlanes of company:");
         for(Plane plane : company.getPlanes()){
             System.out.println(plane);
         }
 
-        System.out.println(PlaneOperation.totalCapacity(company.getPlanes()));
-        System.out.println(PlaneOperation.totalSeating(company.getPlanes()));
-        System.out.println(PlaneOperation.sortByRange(company.getPlanes()));
-        System.out.println(PlaneOperation.findPlanesByFuel(company.getPlanes(), 15, 20));
+
+        System.out.println("\nTotal capacity = " + PlaneOperation.totalCapacity(company.getPlanes()));
+        System.out.println("\nTotal seats = " + PlaneOperation.totalSeats(company.getPlanes()));
+        System.out.println("\nSort by range:\n" + PlaneOperation.sortByRange(company.getPlanes()));
+        System.out.println("\nFind planes by fuel:\n" +
+                                        PlaneOperation.findPlanesByFuel(company.getPlanes(), 15, 20));
 
     }
 }

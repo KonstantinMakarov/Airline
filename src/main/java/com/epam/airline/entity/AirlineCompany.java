@@ -22,6 +22,7 @@ public class AirlineCompany {
         return instance;
     }
 
+    //todo what is the first? override or getters/setters?
     public List<Plane> getPlanes() {
         return Collections.unmodifiableList(planes);
     }

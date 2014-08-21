@@ -19,7 +19,7 @@ public  class PlaneOperation {
                 rightPlanes.add(plane);
             }
         }
-        return rightPlanes;
+        return Collections.unmodifiableList(rightPlanes);
     }
 
 
@@ -30,10 +30,10 @@ public  class PlaneOperation {
         for (Plane plane : planes) {
             planeSet.add(plane);
         }
-        return planeSet;
+        return Collections.unmodifiableSet(planeSet);
     }
 
-    public static int totalSeating(List<Plane> planes) {
+    public static int totalSeats(List<Plane> planes) {
         int seats = 0;
 
         for (Plane plane : planes) {
