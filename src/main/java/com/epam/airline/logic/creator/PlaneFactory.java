@@ -1,4 +1,4 @@
-package com.epam.airline.entity.creator;
+package com.epam.airline.logic.creator;
 
 import com.epam.airline.entity.Airliner;
 import com.epam.airline.entity.Freighter;

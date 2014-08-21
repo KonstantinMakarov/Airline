@@ -8,7 +8,7 @@ public class Plane {
     private int range;
     private int fuelConsumption;
 
-    public Plane(String name, int range, int fuelConsumption){
+    public Plane(String name, int range, int fuelConsumption) throws IllegalArgumentException{
         this.name = name;
         this.range = range;
         this.fuelConsumption = fuelConsumption;
