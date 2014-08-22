@@ -4,7 +4,6 @@ import com.epam.airline.entity.AirlineCompany;
 import com.epam.airline.entity.Plane;
 import com.epam.airline.entity.PlaneEnum;
 import com.epam.airline.logic.PlaneOperation;
-import com.epam.airline.logic.Verifier;
 import com.epam.airline.logic.creator.PlaneFactory;
 
 /**
@@ -17,7 +16,7 @@ public class Main {
         Plane plane;
         for(PlaneEnum planeEnum : PlaneEnum.values()){
             plane = PlaneFactory.buildPlane(planeEnum);
-            if(Verifier.checkPlane(plane)){
+            if(null != plane){
                 company.addPlane(plane);
             }
         }

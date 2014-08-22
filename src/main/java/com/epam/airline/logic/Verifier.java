@@ -1,32 +1,32 @@
 package com.epam.airline.logic;
 
-import com.epam.airline.entity.Airliner;
-import com.epam.airline.entity.Freighter;
-import com.epam.airline.entity.Plane;
+import com.epam.airline.entity.PlaneEnum;
 
 /**
  * Created by Kanstantsin_Makarau on 8/21/2014.
  */
 public class Verifier {
 
-    public static boolean checkPlane(Plane plane){
-        if(plane.getName() == "" || plane.getRange() <= 0 || plane.getFuelConsumption() <= 0){
-            return false;
+    public static boolean checkPlaneParameters(PlaneEnum planeEnum) throws IllegalArgumentException{
+        if (planeEnum.getName() == "") {
+            throw new IllegalArgumentException("Illegal name in " + planeEnum);
         }
-
-        if(plane instanceof Airliner){
-            Airliner airliner = (Airliner)plane;
-            if(airliner.getSeats() <= 0){
-                return false;
+        if(planeEnum.getOthers().get(0) <= 0){
+            throw new IllegalArgumentException("Illegal range in " + planeEnum);
+        }
+        if(planeEnum.getOthers().get(1) <= 0){
+            throw new IllegalArgumentException("Illegal fuel consumption in " + planeEnum);
+        }
+        if (planeEnum.getType().equalsIgnoreCase("Airliner")) {
+            if(planeEnum.getOthers().get(2) <= 0){
+                throw new IllegalArgumentException("Illegal seats in " + planeEnum);
             }
         }
-        if(plane instanceof Freighter){
-            Freighter freighter = (Freighter)plane;
-            if(freighter.getCapacity() <= 0){
-                return false;
+        if (planeEnum.getType().equalsIgnoreCase("Freighter")) {
+            if(planeEnum.getOthers().get(2) <= 0){
+                throw new IllegalArgumentException("Illegal capacity in " + planeEnum);
             }
         }
-
         return true;
     }
 }
