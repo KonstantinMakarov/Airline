@@ -7,7 +7,7 @@ import com.epam.airline.entity.Plane;
 import java.util.*;
 
 /**
- * Use for ...
+ * Execute operations with planes.
  */
 public  class PlaneOperation {
 

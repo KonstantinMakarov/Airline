@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * Use for ...
+ * Entity of list of planes.
  */
 public enum PlaneEnum {
     AN_225("freighter", "AN_225", 3500, 15, -5),

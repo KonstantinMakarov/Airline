@@ -5,7 +5,7 @@ import com.epam.airline.entity.Plane;
 import java.util.Comparator;
 
 /**
- * Use for ...
+ * Comparator for planes. Compare by range.
  */
 public class PlaneRangeComparator implements Comparator<Plane> {
 

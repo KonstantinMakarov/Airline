@@ -11,6 +11,10 @@ public class Freighter extends Plane {
         this.capacity = capacity;
     }
 
+    public int getCapacity() {
+        return capacity;
+    }
+
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
@@ -40,7 +44,4 @@ public class Freighter extends Plane {
         return result;
     }
 
-    public int getCapacity() {
-        return capacity;
-    }
 }

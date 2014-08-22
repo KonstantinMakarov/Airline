@@ -11,6 +11,10 @@ public class Airliner extends Plane {
         this.seats = seats;
     }
 
+    public int getSeats() {
+        return seats;
+    }
+
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
@@ -40,7 +44,4 @@ public class Airliner extends Plane {
         return result;
     }
 
-    public int getSeats() {
-        return seats;
-    }
 }

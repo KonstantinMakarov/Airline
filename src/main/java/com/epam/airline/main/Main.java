@@ -7,7 +7,7 @@ import com.epam.airline.logic.PlaneOperation;
 import com.epam.airline.logic.creator.PlaneFactory;
 
 /**
- * Created by Kanstantsin_Makarau on 8/19/2014.
+ * Entry Class.
  */
 public class Main {
 

@@ -14,6 +14,18 @@ public class Plane {
         this.fuelConsumption = fuelConsumption;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public int getRange() {
+        return range;
+    }
+
+    public int getFuelConsumption() {
+        return fuelConsumption;
+    }
+
     @Override
     public String toString() {
         StringBuilder builder = new StringBuilder();
@@ -47,18 +59,6 @@ public class Plane {
         result = 7 * result + range;
         result = 7 * result + fuelConsumption;
         return result;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public int getRange() {
-        return range;
-    }
-
-    public int getFuelConsumption() {
-        return fuelConsumption;
     }
 
 }

@@ -3,7 +3,7 @@ package com.epam.airline.logic;
 import com.epam.airline.entity.PlaneEnum;
 
 /**
- * Created by Kanstantsin_Makarau on 8/21/2014.
+ * Check plane parameters from PlaneEnum.
  */
 public class Verifier {
 
