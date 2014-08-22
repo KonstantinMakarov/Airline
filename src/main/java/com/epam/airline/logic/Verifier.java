@@ -1,5 +1,6 @@
 package com.epam.airline.logic;
 
+import com.epam.airline.entity.Airliner;
 import com.epam.airline.entity.Plane;
 
 /**
@@ -8,7 +9,13 @@ import com.epam.airline.entity.Plane;
 public class Verifier {
     //todo
     public static boolean checkPlane(Plane plane){
-
+        Airliner airliner = null;
+        if(plane instanceof Airliner){
+            airliner = (Airliner)plane;
+            if(airliner.getName() == ""){
+                return false;
+            }
+        }
         return true;
     }
 }
